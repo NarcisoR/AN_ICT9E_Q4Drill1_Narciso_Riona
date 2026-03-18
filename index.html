@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q4 Drill</title>
+    <style>
+        body{
+            background-image: url(https://i.pinimg.com/1200x/29/59/cf/2959cfbd4e94406e855f3ae23b2cbe34.jpg);
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            width: 400px;
+            margin: 50px auto;
+            background-color: rgba(11, 22, 83, 0.863);
+            padding: 20px;
+            border-radius: 25px;
+            border: 4px solid #fff;
+        }
+        h1 {
+            text-align: center;
+            background-color: #ffffffd5;
+            width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border-radius: 15px;
+            }
+        input[type="number"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            width: 95%;
+        }
+        .logo img {
+            height: 100px;
+            display: block;
+            margin: 0 auto;
+            align-self: left;
+        }
+
+    </style>
+</head>
+<body>
+
+<h1>Electricity Usage Classifier</h1>
+<div class="container">
+    <form>
+        <div class="logo">
+            <img src="https://files.orangeapps.ph/disk001/School_Files/1/school-69/school_profile/1724046771-1024.png" alt="Logo">
+        </div>
+        <input type="number" id="usage" placeholder="Input your Electricity Usage"><br><br>
+        <button type="button" onclick="calculate()">CLASSIFY</button>
+    </form>
+
+    <script>
+       function calculate() {
+        let usage = parseFloat(document.getElementById("usage").value);
+        if (usage<0) {
+            document.write("Usage is: " + usage + "<br>" + "Invalid usage value ");
+        }
+        else if (usage >=101 && usage <=200) {
+            document.write("Usage is: " + usage + "<br>" + "Normal residential rate ");
+        }else if (usage >=201 && usage <=300) {
+            document.write("Usage is: " + usage + "<br>" + "Typical electricity usage ");
+        }else if (usage >=301 && usage <=500) {
+            document.write("Usage is: " + usage + "<br>" + "Higher electricity usage");
+        } else {
+            document.write("Usage is: " + usage + "<br>" + "Heavy electricity users");
+        }
+       }
+    </script>
+    </div>
+</body>
+</html>
